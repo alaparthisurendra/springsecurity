@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,18 +17,31 @@ import com.springsecurity.exception.UserNotFoundException;
 import com.springsecurity.model.User;
 import com.springsecurity.service.UserService;
 
-@RestController
+@Controller
 @RequestMapping("/users")
 public class Controllerex {
 	
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/home")
+	@RequestMapping("/home")
 	public String home()
 	{
-		return "hello suurendra";
+		return "home.jsp";
 	}
+	
+	@RequestMapping("/login")
+	public String loginPage()
+	{
+		return "login.jsp";
+	}
+	
+	@RequestMapping("/logout-success")
+	public String logoutPage()
+	{
+		return "logout.jsp";
+	}
+
 	
 	@PostMapping("/add")
 	public ResponseEntity<User> addUser(@RequestBody User user) 
