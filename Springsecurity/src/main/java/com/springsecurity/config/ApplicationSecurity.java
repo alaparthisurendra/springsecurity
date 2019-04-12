@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.util.AntPathMatcher;
@@ -24,6 +25,7 @@ import net.bytebuddy.agent.builder.AgentBuilder.InitializationStrategy.NoOp;
 
 @Configuration
 @EnableWebSecurity
+//@EnableOAuth2Client
 public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 
 	@Autowired

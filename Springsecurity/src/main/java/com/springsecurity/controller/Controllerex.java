@@ -18,13 +18,13 @@ import com.springsecurity.model.User;
 import com.springsecurity.service.UserService;
 
 @Controller
-@RequestMapping("/users")
+/*@RequestMapping("/users")*/
 public class Controllerex {
 	
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String home()
 	{
 		return "home.jsp";
